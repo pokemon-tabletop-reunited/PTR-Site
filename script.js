@@ -1,8 +1,29 @@
+function getFileContent(filePath) {
+    return new Promise((resolve, reject) => {
+        var req = new XMLHttpRequest();
+    
+        // Define parameters for request.
+        req.open('get', 'list.hbs', true);
+    
+        // Wait for request to complete.
+        req.onreadystatechange = function(){
+            if (req.readyState == 4 && req.status == 200){
+                // Execute callback function and parse variables.
+                resolve(req.response)
+            }
+        };
+    
+        // Send request.
+        req.send();
+    });
+}
 
 window.onload = async () => {
     // compile the template
-    const listTemplate = Handlebars.compile('list.hbs');
-    const itemTemplate = Handlebars.compile('item.hbs');
+    const listSource = await getFileContent('list.hbs');
+    const listTemplate = Handlebars.compile(listSource);
+    const itemSource = await getFileContent('item.hbs');
+    const itemTemplate = Handlebars.compile(itemSource);
 
     // Register handlebars capitalize function
     Handlebars.registerHelper("capitalize", function (str) {
@@ -56,7 +77,7 @@ window.onload = async () => {
                     ...monFuse.search(input),
                     ...moveFuse.search(input)
                 ].sort((a, b) => a.score - b.score);
-                console.log(results);
+                
                 const html = listTemplate({
                     total: results.length > 12 ? 12 : results.length,
                     items: results.length > 12 ? results.slice(0, 12).map(x => x.item) : results.map((x) => x.item),
