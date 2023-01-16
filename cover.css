@@ -153,8 +153,8 @@ body {
 
 .embed {
   border-radius: 0 3px 3px 0;
-  background: rgba(46, 48, 54, 0.3);
-  border-color: rgba(46, 48, 54, 0.6);
+  background: #1D1E20;
+  border-color: #1D1E20;
   display: flex;
   padding: 8px 10px;
   color: rgba(255, 255, 255, 0.6);
