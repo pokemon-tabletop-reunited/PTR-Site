@@ -76,9 +76,28 @@ body {
 
 .jsonsearch {
   position: relative;
-  width: 30rem;
   background: var(--color-brand);
   border-radius: var(--rad);
+}
+
+@media only screen and (min-width: 600px) {
+  .jsonsearch {
+    width: 30rem;
+  }  
+
+  .list-flex {
+    flex: 0 0 250px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .jsonsearch {
+    width: 100%;
+  }  
+
+  .list-flex {
+    flex: 0 0 130px;
+  }
 }
 
 .jsonsearchinput {
@@ -161,6 +180,16 @@ body {
      object-fit: contain;
   margin-left: 0.1rem;
 }
+@media only screen and (max-width: 875px) {
+  .embed img.embed-thumb {
+    position: absolute;
+  }
+
+  .embed .embed-title.pokemon {
+    margin-top: 10rem;
+  }
+}
+
 .embed .embed-inner .embed-title {
   font-size: 16px;
   font-weight: 600;
@@ -187,6 +216,13 @@ body {
   max-width: 150px;
   flex-basis: auto;
 }
+@media only screen and (max-width: 600px) {
+  .embed .embed-inner .fields .field.inline {
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
 .embed .embed-inner .fields .field .field-name {
   color: #fff;
   font-size: 14px;
@@ -206,7 +242,6 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 250px;
   text-align: left;
   justify-content: space-between;
 }
@@ -214,7 +249,22 @@ body {
   flex: 0 0 40%;
 }
 .embed .embed-inner .fields .field .field-value .list-items .value{
-  flex: 1 0 35%;
+  flex: 0 0 35%;
+}
+@media only screen and (min-width: 600px) {
+  .embed .embed-inner .fields .field .field-value .list-items {
+    width: 250px;
+  }
+}
+
+.embed .embed-inner .fields .field .field-value .list-items.move-list-items {
+  width: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+  .embed .embed-inner .fields .field .field-value .list-items {
+    width: 130px;
+  }
 }
 
 a[data-tm-number] {
