@@ -22,7 +22,8 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 
@@ -117,4 +118,106 @@ body {
   font-size: 1.2rem;
   text-transform: capitalize;
   text-decoration: none;
+}
+
+/* Embed */
+.wrapper {
+  display: flex;
+  text-align: start;
+}
+
+.side-colored {
+  width: 4px;
+  border-radius: 3px 0 0 3px;
+  background: #4f545c;
+}
+
+.embed {
+  border-radius: 0 3px 3px 0;
+  background: rgba(46, 48, 54, 0.3);
+  border-color: rgba(46, 48, 54, 0.6);
+  display: flex;
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  width:100%;
+  flex-wrap: wrap;
+}
+.embed .card-block {
+  padding: 0;
+  display: flex;
+  margin-bottom: 10px;
+}
+.embed a {
+  color: #0096cf;
+}
+.embed img.embed-thumb {
+  max-height: 160px;
+  max-width: 160px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: 0.1rem;
+}
+.embed .embed-inner .embed-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.embed .embed-inner .fields {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-lines: miltiple;
+  margin-top: -10px;
+}
+.embed .embed-inner .fields .field {
+  flex: 0;
+  box-flex: 1;
+  padding-top: 10px;
+  padding-bottom: 0.25rem;
+  min-width: 100%;
+}
+.embed .embed-inner .fields .field.inline {
+  box-flex: 1;
+  flex: 1;
+  min-width: 150px;
+  max-width: 150px;
+  flex-basis: auto;
+}
+.embed .embed-inner .fields .field .field-name {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.embed .embed-inner .fields .field .field-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.1em;
+  white-space: pre-wrap;
+  margin-top: 6px;
+  word-wrap: break-word;
+}
+.embed .embed-inner .fields .field .field-value .list-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 250px;
+  text-align: left;
+  justify-content: space-between;
+}
+.embed .embed-inner .fields .field .field-value .list-items .label{
+  flex: 0 0 40%;
+}
+.embed .embed-inner .fields .field .field-value .list-items .value{
+  flex: 1 0 35%;
+}
+
+a[data-tm-number] {
+  color: #0096cf !important;
+  cursor: pointer;
 }
